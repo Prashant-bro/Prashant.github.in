@@ -12,14 +12,14 @@ export default function Certifications() {
       issuer: "Oracle Academy",
       description: "Core concepts of relational databases, SQL, and database design principles.",
       id: "CERT-02",
-      pdfUrl: "/certs/CERT-02.png",
+      pdfUrl: "/certs/CERT-02.jpg",
     },
     {
       title: "Java Fundamentals",
       issuer: "Oracle Academy",
       description: "Solid grounding in Java programming, object-oriented concepts, and application logic.",
       id: "CERT-03",
-      pdfUrl: "/certs/CERT-03.png",
+      pdfUrl: "/certs/CERT-03.jpg",
     },
   ]
 
