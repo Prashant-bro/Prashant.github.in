@@ -1,26 +1,257 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-1: #f7f4ef;
+  --bg-2: #f0ebe1;
+  --bg-3: #e7eef2;
+  --text-1: #132126;
+  --text-2: #445e64;
+  --brand-1: #0f766e;
+  --brand-2: #e57434;
+  --brand-3: #0ea5a4;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-border: rgba(19, 33, 38, 0.12);
+  --shadow-1: 0 24px 60px rgba(19, 33, 38, 0.12);
+  --radius-lg: 1.35rem;
+  --radius-xl: 1.8rem;
+  --transition-smooth: 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --color-background: var(--bg-1);
+  --color-foreground: var(--text-1);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-space-mono);
+  --section-offset: 6.6rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: var(--text-1);
+  font-family: var(--font-manrope), "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 10% -5%, rgba(229, 116, 52, 0.17) 0%, rgba(229, 116, 52, 0) 42%),
+    radial-gradient(circle at 92% 8%, rgba(14, 165, 164, 0.2) 0%, rgba(14, 165, 164, 0) 38%),
+    linear-gradient(140deg, var(--bg-1) 0%, var(--bg-2) 46%, var(--bg-3) 100%);
+  background-attachment: fixed;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(8px);
+}
+
+body::before {
+  width: 340px;
+  height: 340px;
+  top: 42vh;
+  left: -120px;
+  background: rgba(229, 116, 52, 0.16);
+}
+
+body::after {
+  width: 460px;
+  height: 460px;
+  top: 14vh;
+  right: -160px;
+  background: rgba(15, 118, 110, 0.14);
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  padding: 2.5rem 0 5rem;
+}
+
+.section-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-1);
+}
+
+.section-anchor {
+  scroll-margin-top: var(--section-offset);
+}
+
+.accent-text {
+  background: linear-gradient(120deg, var(--brand-1), var(--brand-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtle-copy {
+  color: var(--text-2);
+}
+
+.rise-in {
+  animation: riseIn 740ms cubic-bezier(0.17, 0.84, 0.44, 1) both;
+}
+
+.fade-in {
+  animation: fadeIn 880ms ease both;
+}
+
+.stagger-1 {
+  animation-delay: 120ms;
+}
+
+.stagger-2 {
+  animation-delay: 220ms;
+}
+
+.stagger-3 {
+  animation-delay: 320ms;
+}
+
+.stagger-4 {
+  animation-delay: 420ms;
+}
+
+.float-soft {
+  animation: floatSoft 6s ease-in-out infinite;
+}
+
+.line-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.line-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(110deg, transparent 10%, rgba(255, 255, 255, 0.5) 50%, transparent 90%);
+  animation: shimmer 1.75s linear infinite;
+}
+
+.tile-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.data-tile {
+  position: relative;
+  border-radius: 1.05rem;
+  border: 1px solid rgba(19, 33, 38, 0.14);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.8) 100%);
+  box-shadow: 0 10px 28px rgba(19, 33, 38, 0.1);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.data-tile:hover {
+  transform: translateY(-4px);
+  border-color: rgba(15, 118, 110, 0.36);
+  box-shadow: 0 22px 44px rgba(19, 33, 38, 0.16);
+}
+
+.tile-kicker {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 118, 110, 0.26);
+  background: rgba(15, 118, 110, 0.08);
+  color: #0f766e;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.tile-meta {
+  color: #33535a;
+  font-family: var(--font-space-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --section-offset: 6rem;
+  }
+
+  .page-shell {
+    width: min(94vw, 1120px);
+    padding-top: 1.8rem;
+    padding-bottom: 3.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
