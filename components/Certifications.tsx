@@ -5,21 +5,21 @@ export default function Certifications() {
       issuer: "Cisco Networking Academy",
       description: "Foundational knowledge in data analysis, visualization, and statistical concepts.",
       id: "CERT-01",
-      pdfUrl: "/certs/data-science.pdf",
+      pdfUrl: "/certs/CERT-01.png",
     },
     {
       title: "Database Foundations",
       issuer: "Oracle Academy",
       description: "Core concepts of relational databases, SQL, and database design principles.",
       id: "CERT-02",
-      pdfUrl: "/certs/database-foundations.pdf",
+      pdfUrl: "/certs/CERT-02.png",
     },
     {
       title: "Java Fundamentals",
       issuer: "Oracle Academy",
       description: "Solid grounding in Java programming, object-oriented concepts, and application logic.",
       id: "CERT-03",
-      pdfUrl: "/certs/java-fundamentals.pdf",
+      pdfUrl: "/certs/CERT-03.png",
     },
   ]
 
