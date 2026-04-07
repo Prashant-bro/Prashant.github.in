@@ -84,7 +84,7 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center self-start rounded-lg bg-[#132126] px-4 py-2 text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#0f766e]"
+                  className="inline-flex items-center self-start rounded-lg bg-gradient-to-r from-[#0ea5a4] to-[#0f766e] px-4 py-2 text-sm font-semibold text-white shadow-[0_8px_18px_rgba(15,118,110,0.24)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#0f766e] hover:to-[#0b5f59]"
                 >
                   View on GitHub
                 </a>
