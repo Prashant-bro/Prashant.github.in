@@ -161,14 +161,14 @@ a {
   border: 1px solid rgba(19, 33, 38, 0.14);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.8) 100%);
-  box-shadow: 0 10px 28px rgba(19, 33, 38, 0.1);
+  box-shadow: 0 10px 28px rgba(41, 54, 59, 0.1);
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
 }
 
 .data-tile:hover {
   transform: translateY(-4px);
   border-color: rgba(15, 118, 110, 0.36);
-  box-shadow: 0 22px 44px rgba(19, 33, 38, 0.16);
+  box-shadow: 0 22px 44px rgba(76, 99, 107, 0.16);
 }
 
 .tile-kicker {

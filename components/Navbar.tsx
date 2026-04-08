@@ -107,8 +107,8 @@ export default function Navbar() {
                 }}
                 className={`rounded-lg px-3 py-2 transition-all duration-200 ${
                   isActive
-                    ? "bg-[#132126] text-white shadow"
-                    : "hover:bg-white hover:text-[#0f766e]"
+                    ? "bg-[#14b8a6] text-white shadow"
+                    : "hover:bg-white hover:text-[#76110f]"
                 }`}
               >
                 {link.label}
