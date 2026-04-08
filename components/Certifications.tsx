@@ -1,3 +1,5 @@
+import { sitePath } from "./sitePath"
+
 export default function Certifications() {
   const certifications = [
     {
@@ -63,7 +65,7 @@ export default function Certifications() {
 
               <div className="mt-6 pt-6 border-t border-[#1321260a]">
                 <a
-                  href={cert.pdfUrl}
+                  href={sitePath(cert.pdfUrl)}
                   target="_blank"
                   rel="noreferrer"
                   className="group inline-flex items-center gap-2 text-sm font-bold text-[#132126] transition-colors hover:text-[#0f766e]"

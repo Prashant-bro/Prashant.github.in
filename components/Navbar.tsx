@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"
+import { sitePath } from "./sitePath"
 
 const navLinks = [
   { sectionId: "home", label: "Home" },
@@ -87,10 +88,12 @@ export default function Navbar() {
           {navLinks.map((link) => {
             const href =
               link.sectionId === "home"
-                ? "/"
+                ? sitePath("/")
+                : link.sectionId === "resume"
+                  ? sitePath("/resume")
                 : isHomePage
                   ? `#${link.sectionId}`
-                  : `/#${link.sectionId}`
+                  : sitePath(`/#${link.sectionId}`)
 
             const isActive = isHomePage
               ? activeSection === link.sectionId

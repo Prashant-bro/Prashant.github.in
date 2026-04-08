@@ -1,3 +1,5 @@
+import { sitePath } from "./sitePath"
+
 export default function ResumeViewer() {
   return (
     <section id="resume" className="section-anchor section-card rise-in px-6 py-12 sm:px-10 sm:py-14">
@@ -8,14 +10,14 @@ export default function ResumeViewer() {
         </h1>
         <div className="rise-in stagger-2 mt-8 overflow-hidden rounded-2xl border border-[#13212624] bg-white/85 shadow-[0_16px_36px_rgba(19,33,38,0.12)]">
           <iframe
-            src="/Resume.pdf"
+            src={sitePath("/Resume.pdf")}
             title="Prashant resume"
             className="h-[68vh] min-h-[460px] w-full"
           />
         </div>
 
         <a
-          href="/Resume.pdf"
+          href={sitePath("/Resume.pdf")}
           download
           className="rise-in stagger-3 mt-8 inline-flex items-center rounded-xl bg-gradient-to-r from-[#0ea5a4] to-[#0f766e] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_22px_rgba(15,118,110,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#0f766e] hover:to-[#0b5f59]"
         >
