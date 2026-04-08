@@ -38,7 +38,7 @@ export default function Certifications() {
               Professional Certifications & Specialized Training
             </h1>
             <p className="subtle-copy mt-4 text-base sm:text-lg">
-              I've completed several technical certifications that have helped sharpen my expertise in data science, 
+              I&apos;ve completed several technical certifications that have helped sharpen my expertise in data science, 
               databases, and core software engineering fundamentals.
             </p>
           </div>
@@ -96,7 +96,7 @@ export default function Certifications() {
         <div className="mt-12 p-6 rounded-2xl bg-[#0f766e0a] border border-[#0f766e1a] rise-in stagger-4">
           <p className="text-sm font-medium text-[#173037]">
             <span className="font-bold text-[#0f766e]">Note:</span> All certificates are officially verified by the respective academies. 
-            Recruiters can click on "View Certificate" to open the PDF credentials in a new tab.
+            Recruiters can click on &quot;View Certificate&quot; to open the PDF credentials in a new tab.
           </p>
         </div>
       </div>
