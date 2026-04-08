@@ -1,3 +1,5 @@
+"use client"
+
 import { sitePath } from "./sitePath"
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt, FaFileDownload, FaPrint } from "react-icons/fa"
 
