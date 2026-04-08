@@ -255,3 +255,35 @@ a {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  body::before,
+  body::after {
+    display: none !important;
+  }
+
+  .section-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .page-shell {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  nav, 
+  footer,
+  .print-hidden {
+    display: none !important;
+  }
+}
